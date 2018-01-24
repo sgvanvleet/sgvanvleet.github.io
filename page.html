@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript">
+      //GOOGLE MAPS 3D SPLASHPAGE FOR BROWSER
+      //       SCOTT VANVLEET
+      //         1/23/2018
+
+
+      //GENERAL FORMAT FOR GOOGLE MAPS URL:
+      //https://www.google.com/maps/@%latitude%,%longitude%,%height%a,35y,39.53t/data=!3m1!1e3
+      //height should probably be 286 or 143
+
+      //GOTTA GET THE LATITUDE AND LOGITUDE RANGE FOR EACH CITY:
+      //  -NEW YORK     : ([40.711135, 40.757633], [-74.010344, -73.977243])
+      //  -CHICAGO      : ([41.866498, 41.925583], [-87.647835, -87.614768])
+      //  -SAN FRAN     :
+      //  -SEATTLE      :
+      //  -SORENTO      : ([40.628186, 40.621436], [14.368213, 14.389412])
+      //  -ROME         :
+      //  -MADRID       : ([40.446003, 40.387191], [-3.728515, -3.662073])
+      //  -BARCI        : ([41.371888, 41.415527], [2.142187, 2.191148])
+      //  -LOS ANGELES  : ([34.039953, 34.061471], [-118.268759, -118.242569])
+
+      function getRandom(start, end) {
+        difference = end - start;
+        return start + Math.random() * difference;
+      }
+
+      function chooseLocation() {
+        randNum = Math.random();
+        if (randNum < .15) {
+          return "NewYork";
+        } else if (.15 <= randNum < .3) {
+          return "Chicago";
+        } else if (.45 <= randNum < .6) {
+          return "Sorento";
+        } else if (.6 <= randNum < .75) {
+          return "LosAngeles";
+        } else if (.75 <= randNum < .9) {
+          return "Barcelona";
+        } else {
+          return "Madrid";
+        }
+      }
+
+      function createURL() {
+        loc = chooseLocation();
+        height = 143;   //unused, can make random later
+
+        if (loc == "NewYork") {
+          lat = getRandom(40.711135, 40.757633);
+          long = getRandom(-74.010344, -73.977243);
+        } else if (loc == "Chicago") {
+          lat = getRandom(41.866498, 41.925583);
+          long = getRandom(-87.647835, -87.614768);
+        } else if (loc == "Madrid") {
+          lat = getRandom(40.446003, 40.387191);
+          long = getRandom(-3.728515, -3.662073);
+        } else if (loc == "LosAngeles") {
+          lat = getRandom(34.039953, 34.061471);
+          long = getRandom(-118.268759, -118.242569);
+        } else if (loc == "Barcelona") {
+          lat = getRandom(41.371888, 41.415527);
+          long = getRandom(2.142187, 2.191148);
+        } else {
+          //Sorento
+          lat = getRandom(40.628186,40.621436);
+          long = getRandom(14.368213, 14.389412);
+        }
+
+        URL = "https://www.google.com/maps/@" + lat + "," + long + ",286a,35y,39.53t/data=!3m1!1e3";
+        window.location.replace(URL);
+      }
+  </script>
+  <script type="text/javascript">
+    createURL();
+  </script>
+</head> <body></body>
+</html>
