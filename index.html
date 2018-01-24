@@ -21,6 +21,7 @@
       //  -MADRID       : ([40.446003, 40.387191], [-3.728515, -3.662073])
       //  -BARCI        : ([41.371888, 41.415527], [2.142187, 2.191148])
       //  -LOS ANGELES  : ([34.039953, 34.061471], [-118.268759, -118.242569])
+      //  -TOKYO        : ([35.631548, 35.855980], [139.534658, 139.914209])
 
       function getRandom(start, end) {
         difference = end - start;
@@ -29,16 +30,18 @@
 
       function chooseLocation() {
         randNum = Math.random();
-        if (randNum < .15) {
+        if (randNum < .14) {
           return "NewYork";
-        } else if (.15 <= randNum < .3) {
+        } else if (.14 <= randNum < .28) {
           return "Chicago";
-        } else if (.45 <= randNum < .6) {
+        } else if (.28 <= randNum < .42) {
           return "Sorento";
-        } else if (.6 <= randNum < .75) {
+        } else if (.42 <= randNum < .56) {
           return "LosAngeles";
-        } else if (.75 <= randNum < .9) {
+        } else if (.56 <= randNum < .7) {
           return "Barcelona";
+        } else if (.7 <= randNum < .84){
+          return "Tokyo";
         } else {
           return "Madrid";
         }
@@ -63,6 +66,9 @@
         } else if (loc == "Barcelona") {
           lat = getRandom(41.371888, 41.415527);
           long = getRandom(2.142187, 2.191148);
+        } else if (loc == "Tokyo") {
+          lat = getRandom(35.631548, 35.855980);
+          long = getRandom(139.534658, 139.914209);
         } else {
           //Sorento
           lat = getRandom(40.628186,40.621436);
