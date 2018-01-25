@@ -22,6 +22,7 @@
       //  -BARCI        : ([41.371888, 41.415527], [2.142187, 2.191148])
       //  -LOS ANGELES  : ([34.039953, 34.061471], [-118.268759, -118.242569])
       //  -TOKYO        : ([35.631548, 35.748044], [139.534658, 139.914209])
+      //  -CAPE TOWN    : ([-33.929143, -33.922551], [18.376252, 18.386632])
 
       function getRandom(start, end) {
         difference = end - start;
@@ -30,20 +31,22 @@
 
       function chooseLocation() {
         randNum = Math.random();
-        if (randNum < .125) {
+        if (randNum < .1) {
           return "NewYork";
-        } else if (.125 <= randNum < .25) {
+        } else if (.1 <= randNum < .2) {
           return "Chicago";
-        } else if (.25 <= randNum < .375) {
+        } else if (.2 <= randNum < .3) {
           return "Sorento";
-        } else if (.375 <= randNum < .5) {
+        } else if (.3 <= randNum < .4) {
           return "LosAngeles";
-        } else if (.5 <= randNum < .625) {
+        } else if (.4 <= randNum < .5) {
           return "Barcelona";
-        } else if (.625 <= randNum < .7){
+        } else if (.5 <= randNum < .6){
           return "Tokyo";
-        } else if (.7 <= randNum < .875) {
+        } else if (.6 <= randNum < .7) {
           return "SanFran"
+        } else if (.7 <= randNum < .85) {
+          return "CapeTown"
         } else {
           return "Madrid";
         }
@@ -74,6 +77,9 @@
         } else if (loc == "SanFran") {
           lat = getRandom(37.784315, 37.796404);
           long = getRandom(-122.407101, -122.391934);
+        } else if (loc == "CapeTown") {
+          lat = getRandom(-33.929143, -33.922551);
+          long = getRandom(18.376252, 18.386632);
         } else {
           //Sorento
           lat = getRandom(40.628186,40.621436);
