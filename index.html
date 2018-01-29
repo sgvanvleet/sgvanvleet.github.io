@@ -46,9 +46,11 @@
           return "Tokyo";
         } else if (.6 <= randNum < .7) {
           return "SanFran"
-        } else if (.7 <= randNum < .85) {
+        } else if (.7 <= randNum < .8) {
           return "CapeTown"
-        } else {
+        } else if (.9 <= randNum < .9) {
+          return "Positano"
+        }else {
           return "Madrid";
         }
       }
@@ -81,7 +83,10 @@
         } else if (loc == "CapeTown") {
           lat = getRandom(-33.929143, -33.922551);
           long = getRandom(18.376252, 18.386632);
-        } else {
+        } else if (loc == "Positano") {
+          lat = getRandom(40.627187, 40.632021);
+          long = getRandom(14.479576, 14.494364);
+        }else {
           //Sorento
           lat = getRandom(40.628186,40.621436);
           long = getRandom(14.368213, 14.389412);
