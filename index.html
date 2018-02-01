@@ -5,6 +5,10 @@
       //GOOGLE MAPS 3D SPLASHPAGE FOR BROWSER
       //       SCOTT VANVLEET
       //         1/23/2018
+      
+      //I might as well walk you through this,
+      //maybe it can help someone somewhere 
+      //understand javascript just a lil better.
 
 
       //GENERAL FORMAT FOR GOOGLE MAPS URL:
@@ -25,11 +29,15 @@
       //  -CAPE TOWN    : ([-33.929143, -33.922551], [18.376252, 18.386632])
       //  -POSITANO     : ([40.627187, 40.632021], [14.479576, 14.494364])
 
+      //this is a function. I will later call it to
+      //get a random value between 'start' and 'end'
       function getRandom(start, end) {
         difference = end - start;
         return start + Math.random() * difference;
       }
 
+       //another randomizing function, this will
+      //return a randomly chosen location from our list.
       function chooseLocation() {
         randNum = Math.random();
         if (randNum < .1) {
@@ -55,6 +63,10 @@
         }
       }
 
+      //this is the big important function. This will
+      //call all of the other functions, in order to
+      //finally redirect you to the randomly generated
+      //URL we make!
       function createURL() {
         loc = chooseLocation();
         height = 143;   //unused, can make random later
