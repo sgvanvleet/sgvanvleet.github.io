@@ -48,23 +48,25 @@
       //return a randomly chosen location from our list.
       function chooseLocation() {
         randNum = Math.random();
-        if (randNum < .1) {
+        numPlaces = 10;
+        odds = 1/numplaces;
+        if (randNum < odds) {
           return "NewYork";
-        } else if (.1 <= randNum < .2) {
+        } else if (odds <= randNum < odds*2) {
           return "Chicago";
-        } else if (.2 <= randNum < .3) {
+        } else if (odds*2 <= randNum < odds*3) {
           return "Sorento";
-        } else if (.3 <= randNum < .4) {
+        } else if (odds*3 <= randNum < odds*4) {
           return "LosAngeles";
-        } else if (.4 <= randNum < .5) {
+        } else if (odds*4 <= randNum < odds*5) {
           return "Barcelona";
-        } else if (.5 <= randNum < .6){
+        } else if (odds*5 <= randNum < odds*6) {
           return "Tokyo";
-        } else if (.6 <= randNum < .7) {
+        } else if (odds*6 <= randNum < odds*7) {
           return "SanFran"
-        } else if (.7 <= randNum < .8) {
+        } else if (odds*7 <= randNum < odds*8) {
           return "CapeTown"
-        } else if (.9 <= randNum < .9) {
+        } else if (odds*8 <= randNum < odds*9) {
           return "Positano"
         }else {
           return "Madrid";
