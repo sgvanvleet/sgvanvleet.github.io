@@ -48,7 +48,7 @@
       //return a randomly chosen location from our list.
       function chooseLocation() {
         randNum = Math.random();
-        numPlaces = 10;
+        numPlaces = 11;
         odds = 1/numPlaces;
         if (randNum < odds) {
           return "NewYork";
@@ -68,6 +68,8 @@
           return "CapeTown"
         } else if (odds*8 <= randNum < odds*9) {
           return "Positano"
+        } else if (odds*9 <= randNum < odds*10) {
+          return "Rio"
         }else {
           return "Madrid";
         }
@@ -108,6 +110,9 @@
         } else if (loc == "Positano") {
           lat = getRandom(40.627187, 40.632021);
           long = getRandom(14.479576, 14.494364);
+        } else if (loc == "Rio") {
+          lat = getRandom(-22.929309, -22.897770);
+          long = getRandom(-43.253226, -43.170520);
         }else {
           //Sorento
           lat = getRandom(40.628186,40.621436);
