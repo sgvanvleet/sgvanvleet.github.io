@@ -36,6 +36,7 @@
       //  -CAPE TOWN    : ([-33.929143, -33.922551], [18.376252, 18.386632])
       //  -POSITANO     : ([40.627187, 40.632021], [14.479576, 14.494364])
       //  -RIO          : ([-22.929309, -22.897770], [-43.253226, -43.170520])
+      //  -BUENOSAIRES  : ([-34.624044, -34.591299] ,[-58.446587, -58.371228])
 
       //this is a function. I will later call it to
       //get a random value between 'start' and 'end'
@@ -48,7 +49,7 @@
       //return a randomly chosen location from our list.
       function chooseLocation() {
         randNum = Math.random();
-        numPlaces = 11;
+        numPlaces = 12;
         odds = 1/numPlaces;
         if (randNum < odds) {
           return "NewYork";
@@ -70,6 +71,8 @@
           return "Positano"
         } else if (odds*9 <= randNum < odds*10) {
           return "Rio"
+        } else if (odds*10 <= randNum < odds*11) {
+          return "BuenosAires"
         }else {
           return "Madrid";
         }
@@ -113,6 +116,9 @@
         } else if (loc == "Rio") {
           lat = getRandom(-22.929309, -22.897770);
           long = getRandom(-43.253226, -43.170520);
+        } else if (loc == "BuenosAires") {
+          lat = getRandom(-34.624044, -34.591299);
+          long = getRandom(-58.446587, -58.371228);
         }else {
           //Sorento
           lat = getRandom(40.628186,40.621436);
